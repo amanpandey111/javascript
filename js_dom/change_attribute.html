@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">submit</button>
+
+    <script>
+        let bt = document.getElementById("btn")
+        console.log(bt)
+        // how we can set the attribute
+        bt.setAttribute("name","form1")
+        bt.setAttribute("id","form2")
+
+        // here how we can get the attribute
+        let v = bt.getAttribute("name")
+        console.log(v)
+
+        // remove attribute
+        bt.removeAttribute("attribute name")
+
+        // check whether attribute present or not
+        bt.hasAttribute("attribute_name")
+    </script>
+</body>
+</html>

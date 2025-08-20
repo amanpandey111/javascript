@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--! before begin -->
+    <div id="intro">   <!--! selected -->
+        <!--! after begin -->
+        <h1>header</h1>
+        <p>paragraph tag</p>
+        <!--! before end -->
+    </div>
+    <!--! after end -->
+
+    <script>
+        let elm = document.getElementById("intro")
+        let variable = "<h1> added heading h1 </h1>"
+        elm.insertAdjacentHTML('beforebegin',variable)
+        elm.insertAdjacentHTML('afterbegin',variable)
+        elm.insertAdjacentHTML('beforeend',variable)
+        elm.insertAdjacentHTML('afterend',variable)
+    </script>
+</body>
+</html>

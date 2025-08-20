@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color{
+            background: yellowgreen;
+            color: red;
+        }
+        .dim{
+            border: 2px solid green;
+            padding: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="color">
+        <p>my para</p>
+    </div>
+    <script>
+        let box = document.getElementById("box")
+        console.log(box.className);
+        box.className += " dim"
+        console.log(box.classList);
+
+        box.classList.add("third")
+        for(let css of box.classList){
+            console.log(css);
+        }
+
+        // to remove the classess
+        box.classList.remove("third")
+
+        // to replace 
+        box.classList.replace("dim","third")
+
+        // to check whether class there or not
+        let result = box.classList.contains("dim")
+        console.log(result);
+
+        // toggle :-> if there remove , if not there add it
+        box.classList.toggle("dim")
+    </script>
+</body>
+</html>
