@@ -27,7 +27,7 @@
 // console.log(res.join(" "));
 
 //! 6.Iterate Over a string
-let str = "mangal pandey"
+// let str = "mangal pandey"
 // for(let i=0; i<str.length; i++){
 //     console.log(str[i]);
 // }
@@ -36,6 +36,16 @@ let str = "mangal pandey"
 //     console.log(s);
 // }
 
-str.split("").forEach((char, index)=>{
-    console.log(`${char} : ${index}`);
-})
+// str.split("").forEach((char, index)=>{
+//     console.log(`${char} : ${index}`);
+// })
+
+//! 7.JavaScript Program to Count Number of Alphabets
+const str = "adjfjh23"
+let count = 0
+for(let i=0; i<str.length; i++){
+    if(str.charAt(i)>="A" || str.charAt(i)>="Z"){
+        count++
+    }
+}
+console.log(count);
