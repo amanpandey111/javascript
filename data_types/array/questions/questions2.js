@@ -187,18 +187,51 @@
 // console.log(arr);
 
 //! Rearrange Array Elements by Sign
-let arr = [1, 2, 3, -4, -1, 4]
-let poIndex = 0
-let negIndex = 1
-let solArray = new Array(arr.length)
+// let arr = [1, 2, 3, -4, -1, 4]
+// let poIndex = 0
+// let negIndex = 1
+// let solArray = new Array(arr.length)
+// for(let i=0; i<arr.length; i++){
+//     if(arr[i]<0){
+//         solArray.splice(negIndex,0,arr[i])
+//         negIndex += 2
+//     }else{
+//         solArray.splice(poIndex,0,arr[i])
+//         poIndex += 2
+//     }
+//     console.log(negIndex, poIndex);
+// }
+// console.log(solArray);
+
+//! Leaders in an array : An element is a Leader if it is greater than or equal to all the elements to its right side.
+// let arr = [16, 17, 4, 3, 5, 2]
+// let arr = [1, 2, 3, 4, 5, 2]
+// let result = []
+// for (let i = 0; i < arr.length; i++) {
+//     let b = true
+//     for (let j = i + 1; j < arr.length; j++) {
+//         if (arr[i] <= arr[j]) {
+//             b = false
+//         }
+//     }
+//     if(b){
+//         result.push(arr[i])
+//     }
+// }
+// console.log(result.join(" "));
+
+//! Missing and Repeating in an Array
+let arr = [3, 1, 3]
+let r = []
 for(let i=0; i<arr.length; i++){
-    if(arr[i]<0){
-        solArray.splice(negIndex,0,arr[i])
-        negIndex += 2
-    }else{
-        solArray.splice(poIndex,0,arr[i])
-        poIndex += 2
+    let rc = 0
+    for(let j=i+1; j<arr.length; j++){
+        if(arr[i]===arr[j]){
+            rc+=1
+        }
     }
-    console.log(negIndex, poIndex);
+    if(rc>0){
+        r.push(arr[i])
+    }
 }
-console.log(solArray);
+console.log(r);
