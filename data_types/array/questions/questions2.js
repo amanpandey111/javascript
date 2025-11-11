@@ -221,17 +221,60 @@
 // console.log(result.join(" "));
 
 //! Missing and Repeating in an Array
-let arr = [3, 1, 3]
-let r = []
-for(let i=0; i<arr.length; i++){
-    let rc = 0
-    for(let j=i+1; j<arr.length; j++){
-        if(arr[i]===arr[j]){
-            rc+=1
+// let arr = [3, 1, 3]
+// let r = []
+// for(let i=0; i<arr.length; i++){
+//     let rc = 0
+//     for(let j=i+1; j<arr.length; j++){
+//         if(arr[i]===arr[j]){
+//             rc+=1
+//         }
+//     }
+//     if(rc>0){
+//         r.push(arr[i])
+//     }
+// }
+// console.log(r);
+
+//! Missing ranges of numbers
+// function missingRanges(arr,lower,upper){
+//     n = arr.length
+//     let res = []
+//     if(lower<arr[0]){
+//         res.push([lower,arr[0]-1])
+//     }
+
+//     for(let i=0; i<arr.length-1; i++){
+//         if(arr[i+1]-arr[i]>1){
+//             res.push([arr[i]+1,arr[i+1]-1])
+//         }
+//     }
+
+//     if(upper>arr[n-1]){
+//         res.push([arr[n-1]-1,upper])
+//     }
+    
+//     return res
+// }
+// let arr = [14,15,20,30,31,45]
+// let lower = 10
+// let upper = 50
+// const res = missingRanges(arr,lower,upper)
+// console.log(res)
+
+//! Sum of all Subarrays
+function sumOfArray(arr){
+    let n = arr.length
+    let res = 0
+    for(let i=0; i<arr.length; i++){
+        let tem = 0
+        for(let j=i; j<arr.length; j++){
+            tem+=arr[j]
+            res += tem
         }
     }
-    if(rc>0){
-        r.push(arr[i])
-    }
+    return res
 }
-console.log(r);
+let arr = [1, 2, 3, 4]
+let res = sumOfArray(arr)
+console.log(res)
