@@ -187,18 +187,51 @@
 // console.log(arr);
 
 //! Rearrange Array Elements by Sign
-let arr = [1, 2, 3, -4, -1, 4]
-let poIndex = 0
-let negIndex = 1
-let solArray = new Array(arr.length)
-for(let i=0; i<arr.length; i++){
-    if(arr[i]<0){
-        solArray.splice(negIndex,0,arr[i])
-        negIndex += 2
-    }else{
-        solArray.splice(poIndex,0,arr[i])
-        poIndex += 2
-    }
-    console.log(negIndex, poIndex);
+// let arr = [1, 2, 3, -4, -1, 4]
+// let poIndex = 0
+// let negIndex = 1
+// let solArray = new Array(arr.length)
+// for(let i=0; i<arr.length; i++){
+//     if(arr[i]<0){
+//         solArray.splice(negIndex,0,arr[i])
+//         negIndex += 2
+//     }else{
+//         solArray.splice(poIndex,0,arr[i])
+//         poIndex += 2
+//     }
+//     console.log(negIndex, poIndex);
+// }
+// console.log(solArray);
+
+//! gje
+// let n = 2;
+// let f = 10**2
+// let total_array = []
+// let final = []
+// for(let i=0; i<f; i++){
+//     total_array.push(i)
+// }
+// for(let i=0; i<total_array.length; i++){
+//     if(total_array[i]<11){
+//         final.push(total_array[i])
+//     }else{
+//     }
+// }
+// console.log(final);
+
+let n = 2;
+let f = 10 ** n;
+let final = [];
+
+for (let i = 0; i < f; i++) {
+  let str = i.toString();
+//   console.log(str);
+  let set = new Set(str);
+  console.log(set);
+  
+  // if all digits are unique, push to final
+  if (set.size === str.length) {
+    final.push(i);
+  }
 }
-console.log(solArray);
+console.log(final.length);
