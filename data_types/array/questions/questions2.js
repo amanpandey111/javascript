@@ -203,78 +203,35 @@
 // }
 // console.log(solArray);
 
-//! Leaders in an array : An element is a Leader if it is greater than or equal to all the elements to its right side.
-// let arr = [16, 17, 4, 3, 5, 2]
-// let arr = [1, 2, 3, 4, 5, 2]
-// let result = []
-// for (let i = 0; i < arr.length; i++) {
-//     let b = true
-//     for (let j = i + 1; j < arr.length; j++) {
-//         if (arr[i] <= arr[j]) {
-//             b = false
-//         }
-//     }
-//     if(b){
-//         result.push(arr[i])
+//! gje
+// let n = 2;
+// let f = 10**2
+// let total_array = []
+// let final = []
+// for(let i=0; i<f; i++){
+//     total_array.push(i)
+// }
+// for(let i=0; i<total_array.length; i++){
+//     if(total_array[i]<11){
+//         final.push(total_array[i])
+//     }else{
 //     }
 // }
-// console.log(result.join(" "));
+// console.log(final);
 
-//! Missing and Repeating in an Array
-// let arr = [3, 1, 3]
-// let r = []
-// for(let i=0; i<arr.length; i++){
-//     let rc = 0
-//     for(let j=i+1; j<arr.length; j++){
-//         if(arr[i]===arr[j]){
-//             rc+=1
-//         }
-//     }
-//     if(rc>0){
-//         r.push(arr[i])
-//     }
-// }
-// console.log(r);
+let n = 2;
+let f = 10 ** n;
+let final = [];
 
-//! Missing ranges of numbers
-// function missingRanges(arr,lower,upper){
-//     n = arr.length
-//     let res = []
-//     if(lower<arr[0]){
-//         res.push([lower,arr[0]-1])
-//     }
-
-//     for(let i=0; i<arr.length-1; i++){
-//         if(arr[i+1]-arr[i]>1){
-//             res.push([arr[i]+1,arr[i+1]-1])
-//         }
-//     }
-
-//     if(upper>arr[n-1]){
-//         res.push([arr[n-1]-1,upper])
-//     }
-    
-//     return res
-// }
-// let arr = [14,15,20,30,31,45]
-// let lower = 10
-// let upper = 50
-// const res = missingRanges(arr,lower,upper)
-// console.log(res)
-
-//! Sum of all Subarrays
-function sumOfArray(arr){
-    let n = arr.length
-    let res = 0
-    for(let i=0; i<arr.length; i++){
-        let tem = 0
-        for(let j=i; j<arr.length; j++){
-            tem+=arr[j]
-            res += tem
-        }
-    }
-    return res
+for (let i = 0; i < f; i++) {
+  let str = i.toString();
+//   console.log(str);
+  let set = new Set(str);
+  console.log(set);
+  
+  // if all digits are unique, push to final
+  if (set.size === str.length) {
+    final.push(i);
+  }
 }
-let arr = [1, 2, 3, 4]
-let res = sumOfArray(arr)
-console.log(res)
+console.log(final.length);
