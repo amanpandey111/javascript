@@ -41,11 +41,59 @@
 // })
 
 //! 7.JavaScript Program to Count Number of Alphabets
-const str = "adjfjh23"
-let count = 0
-for(let i=0; i<str.length; i++){
-    if(str.charAt(i)>="A" || str.charAt(i)>="Z"){
-        count++
+// const str = "adjfjh23"
+// let count = 0
+// for(let i=0; i<str.length; i++){
+//     if(str.charAt(i)>="A" || str.charAt(i)>="Z"){
+//         count++
+//     }
+// }
+// console.log(count);
+
+//! longest substring in an string
+var longestPalindrome = function(s) {
+    let longestPalindrome = ""
+    for(let i=0; i<s.length; i++){
+        for(let j=0; j<s.length; j++){
+            if(s[i]===s[j]){
+                let str = s.slice(i,j+1)
+                // console.log(str);
+                let bool = str == str.split("").reverse().join("")
+                if(bool){
+                    if(longestPalindrome.length<str.length){
+                        // console.log(str);
+                        longestPalindrome = str
+                    }
+                }
+            }
+        }
     }
-}
-console.log(count);
+    return longestPalindrome
+};
+console.log(longestPalindrome("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa..."));
+
+
+
+var longestPalindrome = function(s) {
+    if (s.length < 2) return s;
+
+    let start = 0, maxLen = 1;
+
+    function expand(l, r) {
+        while (l >= 0 && r < s.length && s[l] === s[r]) {
+            if (r - l + 1 > maxLen) {
+                start = l;
+                maxLen = r - l + 1;
+            }
+            l--;
+            r++;
+        }
+    }
+
+    for (let i = 0; i < s.length; i++) {
+        expand(i, i);     // odd length
+        expand(i, i + 1); // even length
+    }
+
+    return s.substring(start, start + maxLen);
+};
