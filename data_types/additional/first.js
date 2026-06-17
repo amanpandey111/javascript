@@ -74,10 +74,33 @@ const map1 = new Map()
 map1.set('milk', 200)
 map1.set('tea', 100)
 map1.set('coffee', 300)
-console.log(Array.from(map1))
-console.log([...map1])
+// console.log(Array.from(map1))
+// console.log([...map1])
 
 //todo : Map vs Object :-> When and how to use
 
 
 //! Set in Javascript : A set is a collection of unique item
+//todo : initialize and properties and methods
+const set = new Set()
+// console.log(set);
+
+const fruitSet = new Set(['mango', 'banana', 'orange'])
+// console.log(fruitSet);
+// console.log(fruitSet.size); // to get the size of set
+
+const team = new Set()
+team.add('Rohith sharma')
+team.add('virat kohli')
+team.add('dhoni')
+team.add('gill')
+// console.log(team);.
+
+// console.log('Do we have rohith sharma ', team.has('Rohith sharma')); // has to check whether we have in set or not
+
+// console.log(team.delete('gill'));
+// console.log(team);
+team.clear()
+// console.log(team);
+
+//todo : Iterate over set
