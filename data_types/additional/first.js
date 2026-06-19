@@ -100,7 +100,47 @@ team.add('gill')
 
 // console.log(team.delete('gill'));
 // console.log(team);
-team.clear()
+// team.clear()
 // console.log(team);
 
 //todo : Iterate over set
+// const houseNos = new Set([1,2,3,4,5,60])
+// houseNos.values(); // Now Here You can use forEach or forOf
+// console.log(houseNos.keys()) // Now Here You can use forEach or forOf
+// console.log(houseNos.entries()) // Now Here You can use forEach or forOf : this will give key:value pair
+
+//todo : sets vs array in javascript
+// whenever you have to desl with unique items got with sets, sets are added muscle to array
+
+//todo : convert sets to array
+const numSet = new Set([10,20,30,40])
+const arr = [...numSet]
+// console.log(numSet, arr)
+
+//todo : convert arrays into set
+const arrFruit = ['🍉', '🚗', '🚴🏻', '🚛', '🐵', '🥥', '🚴🏻', '🚛']
+const setFruit = new Set(arrFruit)
+// console.log(arrFruit, setFruit)
+
+//todo : when you want to use object with sets
+// let person = {
+//   name: 'Robert',
+//   age: 32,
+// }
+// const pSet = new Set()
+// pSet.add(person)
+
+// console.log(pSet)
+// person.name="Vicky Singh" // this name will get updated in pSet as well because it is storing in same reference.
+// person = { name: 'jghdj' } // Here this won't change the pSet because it is creating a reference {b} and pSet has stored reference {a}.
+// pSet.add(person)  // person will get added as a secondary object if it's reference changes, else updated person object will be there.
+// console.log(pSet)
+
+//todo : set theories (union, intersection, difference)
+const first = new Set([1, 2, 3]);
+const second = new Set([3, 4, 5]);
+
+console.log(first.union(second))            // union
+console.log(first.intersection(second))     // intersection 
+console.log(first.difference(second))       // difference : first / second
+console.log(second.difference(first))       // difference : second / first
