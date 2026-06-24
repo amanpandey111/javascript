@@ -140,7 +140,17 @@ const setFruit = new Set(arrFruit)
 const first = new Set([1, 2, 3]);
 const second = new Set([3, 4, 5]);
 
-console.log(first.union(second))            // union
-console.log(first.intersection(second))     // intersection 
-console.log(first.difference(second))       // difference : first / second
-console.log(second.difference(first))       // difference : second / first
+// console.log(first.union(second))            // union
+// console.log(first.intersection(second))     // intersection 
+// console.log(first.difference(second))       // difference : first / second
+// console.log(second.difference(first))       // difference : second / first
+
+// union implmentation without pre-defined method
+const union = new Set([...first, ...second])
+console.log(union);
+const intersection = new Set([...first].filter(ele => second.has(ele)))
+console.log(intersection);
+const difffirst = new Set([...first].filter(ele => !second.has(ele)))
+const diffsecond = new Set([...second].filter(ele => !first.has(ele)))
+console.log(difffirst);
+console.log(diffsecond);
