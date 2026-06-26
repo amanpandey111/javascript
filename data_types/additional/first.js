@@ -147,10 +147,17 @@ const second = new Set([3, 4, 5]);
 
 // union implmentation without pre-defined method
 const union = new Set([...first, ...second])
-console.log(union);
+// console.log(union);
 const intersection = new Set([...first].filter(ele => second.has(ele)))
-console.log(intersection);
+// console.log(intersection);
 const difffirst = new Set([...first].filter(ele => !second.has(ele)))
 const diffsecond = new Set([...second].filter(ele => !first.has(ele)))
-console.log(difffirst);
-console.log(diffsecond);
+// console.log(difffirst);
+// console.log(diffsecond);
+
+
+// superSet and subSet
+const numbers = new Set([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]) // numbers is a superset of the4Table
+const the4Table = new Set([4, 8, 12, 16]) // the4Table is a subset of numbers
+console.log(numbers.isSupersetOf(the4Table)) // true
+console.log(the4Table.isSubsetOf(numbers)) // false
