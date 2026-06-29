@@ -10,7 +10,7 @@ const map = new Map()
 map.set('name', 'aman pandey')
 map.set('company', 'Infoane Technologies')
 map.set('role', 'software engineer')
-map.set('role', 'software engineer1') // latest one will be replaces the old property
+map.set('role', 'software engineer1') //? latest one will be replaces the old property
 
 //todo : How To Get a value
 // console.log("Name is",map.get('name'))
