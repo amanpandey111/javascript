@@ -18,7 +18,7 @@
 //? Now weakMap come here to solve this problem
 // the key of weakMap must be a object only
 // weak only suppose : get, set, delete, has : It doesn't support ietrator method
-let addr = {'country': 'India'}
+let addr = { 'country': 'India' }
 const wMap = new WeakMap();
 wMap.set(addr, true)
 // console.log(wMap.get(addr)) // Here You will get true
@@ -89,7 +89,7 @@ Compare insertion order and key types (e.g., object keys). */
 // mapObj.set({a: true}, true)
 // console.log(obj, mapObj)
 
-/* 4. Build a Contact List Using Map
+/* //todo 4. Build a Contact List Using Map
 Use phone numbers as keys and names as values.
 Add, update, delete contacts.
 Search for a contact by number. */
@@ -99,7 +99,7 @@ Search for a contact by number. */
 // console.log(phone)
 // console.log(phone.get(9898878778))
 
-/* 5. Remove Duplicates from Array Using Set
+/* //todo 5. Remove Duplicates from Array Using Set
 const fruits = ['apple', 'banana', 'apple', 'orange', 'banana'];
 Convert to a Set and back to an array with only unique values. */
 // const fruits = ['apple', 'banana', 'apple', 'orange', 'banana'];
@@ -107,74 +107,65 @@ Convert to a Set and back to an array with only unique values. */
 // console.log(fruitSet)
 // console.log([...fruitSet])
 
-/* 6. Track User Logins with Set
+/* //todo 6. Track User Logins with Set
 Add user IDs when users log in.
 Remove them on logout.
 Check if a specific user is currently logged in. */
-const readline = require("readline");
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
+// const readline = require("readline");
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout,
+// });
 
-const loggedInUsers = new Set();
-
-function menu() {
-    console.log("\n===== User Login System =====");
-    console.log("1. Login");
-    console.log("2. Logout");
-    console.log("3. Check Login Status");
-    console.log("4. View Logged In Users");
-    console.log("5. Exit");
-
-    rl.question("Enter your choice: ", (choice) => {
-        switch (choice) {
-            case "1":
-                rl.question("Enter User ID: ", (id) => {
-                    loggedInUsers.add(id);
-                    console.log(`✅ User ${id} logged in.`);
-                    menu();
-                });
-                break;
-
-            case "2":
-                rl.question("Enter User ID: ", (id) => {
-                    if (loggedInUsers.delete(id)) {
-                        console.log(`✅ User ${id} logged out.`);
-                    } else {
-                        console.log("❌ User not found.");
-                    }
-                    menu();
-                });
-                break;
-
-            case "3":
-                rl.question("Enter User ID: ", (id) => {
-                    console.log(
-                        loggedInUsers.has(id)
-                            ? "✅ User is logged in."
-                            : "❌ User is not logged in."
-                    );
-                    menu();
-                });
-                break;
-
-            case "4":
-                console.log("Logged In Users:");
-                console.log([...loggedInUsers]);
-                menu();
-                break;
-
-            case "5":
-                console.log("Goodbye!");
-                rl.close();
-                break;
-
-            default:
-                console.log("Invalid choice.");
-                menu();
-        }
-    });
-}
-
-menu();
+// const loggedInUsers = new Set();
+// function menu() {
+//     console.log('--- User Login System ---')
+//     console.log('1. Login')
+//     console.log('2. Logout')
+//     console.log('3. Check Login or Not')
+//     console.log('4. Check All Who Logined')
+//     console.log('5. Exit')
+//     rl.question('Enter Your Choice :', (choice) => {
+//         switch (choice) {
+//             case '1':
+//                 rl.question('Enter Login Details :', (detail) => {
+//                     loggedInUsers.add(detail)
+//                     console.log(`User Loged in with id ${detail}`)
+//                     menu()
+//                 })
+//                 break;
+//             case '2':
+//                 rl.question('Enter Login Detail to get Logout :', (detail) => {
+//                     loggedInUsers.clear(detail)
+//                     console.log(`User Logged out with id ${detail}`)
+//                     menu()
+//                 })
+//                 break;
+//             case '3':
+//                 rl.question("Enter Id To check Login Detail :", (detail) => {
+//                     const bool = loggedInUsers.has(detail)
+//                     if (bool) {
+//                         console.log(`User Already LoggedIn with Id ${detail}`)
+//                     } else {
+//                         console.log(`User is Not LoggedIn with Id ${detail}`)
+//                     }
+//                     menu()
+//                 })
+//                 break
+//             case '4':
+//                 const data = [...loggedInUsers]
+//                 console.log(`This are the LoggedIn user`, data)
+//                 menu()
+//                 break;
+//             case '5':
+//                 console.log('GoodByeee...')
+//                 rl.close()
+//                 break
+//             default:
+//                 console.log('Incorrect Choice !...')
+//                 menu()
+//                 break;
+//         }
+//     })
+// }
+// menu()
