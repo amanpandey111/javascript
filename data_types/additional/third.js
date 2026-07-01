@@ -56,5 +56,21 @@ Demonstrate benefits for garbage collection. */
 Define a Session class.
 Add each instance to a WeakSet when created.
 Discuss how it avoids memory leaks. */
-const s = new Set(['aman'])
-console.log(s)
+const activeSessions = new WeakSet();
+class Session {
+  constructor(userName){
+    this.userName = userName
+    activeSessions.add(this)
+  }
+  isActive(){
+    return activeSessions.has(this)
+  }
+}
+let Session1 = new Session('Aman')
+let Session2 = new Session('Rahul')
+console.log(Session1.isActive())
+console.log(Session2.isActive())
+let Session3 = new Session('Pavan')
+console.log(Session3.isActive())
+Session2 = null
+console.log(Session2.isActive())
