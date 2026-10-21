@@ -63,6 +63,8 @@ async function fetchEmployee() {
     console.log(employee);
   } catch (error) {
     console.log(error);
+  } finally{
+    console.log('Atlast finally has to execute')
   }
 }
 
