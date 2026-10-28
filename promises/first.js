@@ -1,10 +1,15 @@
 //todo: How do we create a Promise?
-// const myPromise = new Promise((resolve, reject) => {
+// const myPromise = new Promise((firstArgResolve, secondArgReject) => {
 //   // resolve means success
 //   // reject means failure
-
-//   resolve("Data fetched successfully");
+//   const result = true;
+//   if(result){
+//     firstArgResolve("Data fetched successfully");
+//   }else{
+//     secondArgReject("Promise Reject Successfully")
+//   }
 // });
+// myPromise.then((success) => console.log(success))
 
 //todo: How do we consume a Promise?
 // const myPromise = new Promise((resolve, reject) => {
