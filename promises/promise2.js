@@ -57,15 +57,29 @@
 // console.log('After displayEmployee call');
 
 //todo: Handling errors with async/await
-async function fetchEmployee() {
-  try {
-    const employee = await Promise.reject("Server error");
-    console.log(employee);
-  } catch (error) {
-    console.log(error);
-  } finally{
-    console.log('Atlast finally has to execute')
-  }
-}
+// async function fetchEmployee() {
+//   try {
+//     const employee = await Promise.reject("Server error");
+//     console.log(employee);
+//   } catch (error) {
+//     console.log(error);
+//   } finally{
+//     console.log('Atlast finally has to execute')
+//   }
+// }
 
-fetchEmployee();
+// fetchEmployee();
+
+// //! Guess the output
+// async function test() {
+//   console.log("A");
+
+//   const result = await Promise.resolve("B");
+
+//   console.log(result);
+// }
+
+// test();
+
+// console.log("C");
+// //! A -> C -> B
